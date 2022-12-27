@@ -20,7 +20,20 @@ module.exports = (app) => {
     app.route('/addstudent')
         .get(studentController.addStudentForm)
         .post(upload.single("images"), uploadMiddleware,studentController.saveStudent)
+    app.route("/student/:id")
+      .get(studentController.getStudentDetails)
+      .delete(studentController.deleteStudentDetails)
+
+    app.route("/student/delete/:id")
+      .get(studentController.deleteStudentDetails)
+
+    app.route("/student/edit/:id")
+      .get(studentController.editStudentDetails)
+      .post(studentController.editStudentDetails)
+
+      
     // app.route('/student/add')
         // .get(studentController.addStudentForm)
         // .post(upload.single("images"), uploadMiddleware,studentController.saveStudent)
+        
 }

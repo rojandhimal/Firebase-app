@@ -21,9 +21,7 @@ var upload = (localFile, remoteFile) => {
     .then((data) => {
       let file = data[0];
       return Promise.resolve(
-        "https://firebasestorage.googleapis.com/v0/b/" +
-          process.env.STORAGEBUCKET +
-          "/o/" +
+        "https://firebasestorage.googleapis.com/v0/b/lab3-13761.appspot.com/o/" +
           encodeURIComponent(file.name) +
           "?alt=media&token=" +
           uuid
@@ -43,6 +41,7 @@ exports.uploadMiddleware = async (req, res, next) => {
 
     upload(`./public/uploads/${fileName}`, fileName).then((downloadURL) => {
       req.body.imageUrl = downloadURL;
+      console.log("image url",downloadURL)
       fs.unlink(`./public/uploads/${fileName}`, (err) => {
         if (err) {
           console.log("unlink error", err);

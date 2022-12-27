@@ -7,7 +7,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label" for="input-first-name">First Name *</label>
-                        <input type='text' name="firstname" class="form-control" placeholder="firstName" required />
+                        <input type='text' name="firstname" class="form-control" placeholder="Name" value="<%= student.firstname %>" required />
                         <div class="invalid-tooltip">
                             Please provide first name.
                         </div>
@@ -17,7 +17,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label" for="input-last-name">Last Name</label>
-                        <input type="text" name="lastname" id="input-last-name" class="form-control" placeholder="Last name" required/>
+                        <input type="text" name="lastname" id="input-last-name" class="form-control" value="<%= student.lastname %>">
                         <div class="invalid-tooltip">
                             Please provide valid user lastname.
                         </div>
@@ -28,30 +28,8 @@
             <div class="row mt-3" >
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label" for="address">Address </label>
-                        <input type="text" name="address" id="address" class="form-control" placeholder="Enter address">
-                        <div class="invalid-tooltip">
-                            address
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label" for="parents">Parent's Name: </label>
-                        <input type="text" name="parents" id="parents" class="form-control" placeholder="Enter parent's name">
-                        <div class="invalid-tooltip">
-                            Parent's name
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="row mt-3" >
-                <div class="col-lg-4">
-                    <div class="form-group">
                         <label class="form-control-label" for="cars">Choose a course:</label><br>
-                        <select name="course" id="course">
+                        <select name="course" value="<%= student.course %>"id="course">
                         <option value="zumba">Zumba</option>
                         <option value="dance">Dance</option>
                         <option value="makup">Makeup</option>
@@ -59,57 +37,35 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="form-group">
-                        <label class="form-control-label" for="cars">Course Type:</label><br>
-                        <select name="coursetype" id="cars">
-                        <option value="basic">Basic</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label" for="cars">Gender:</label><br>
-                        <select name="gender" id="gender">
+                        <select name="gender" id="cars" value="<%= student.gender %>">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="other">Other</option>
                         </select>
                     </div>
                 </div>
-                
             </div>
-
-
             <div class="row mt-3" >
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label" for="dob">Date of birth</label>
-                        <input type='date' name="dob" class="form-control"  required />
+                        <label class="form-control-label" for="address">Address </label>
+                        <input type="text" name="address" id="address" class="form-control" value="<%= student.address %>" placeholder="Enter address">
                         <div class="invalid-tooltip">
-                            Please provide date of birth.
-                        </div>
-                    </div>
-                </div>
-                   
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <label class="form-control-label" for="phone">Phone number </label>
-                        <input type="number" name="phone" id="phone" class="form-control" placeholder="phone number">
-                        <div class="invalid-tooltip">
-                            Please provide valid user lastname.
+                            address
                         </div>
                     </div>
                 </div>
             </div>
+
 
             <div class="row mt-3" >
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label" for="entrydate">Entry Date*</label>
-                        <input type='date' name="entrydate" class="form-control" placeholder="entrydate" required />
+                        <input type='date' name="entrydate" class="form-control" placeholder="entrydate" value="<%= student.entrydate %>" required />
                         <div class="invalid-tooltip">
                             Please provide entrydate.
                         </div>
@@ -119,22 +75,19 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label" for="exitdate">Exit Date </label>
-                        <input type="date" name="exitdate" id="exitdate" class="form-control">
+                        <input type="date" name="exitdate" id="exitdate" class="form-control" value="<%= student.exitdate %>">
                         <div class="invalid-tooltip">
                             Please provide valid user lastname.
                         </div>
                     </div>
                 </div>
             </div>
-
-            
     
             <div class="row mt-3">
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label" for="input-email">Email *</label>
-                        <input type='email' class="form-control" placeholder="Name"
-                            name="email" required />
+                        <input type='email' class="form-control" placeholder="Name" name="email" value="<%= student.email %>" required />
                         <div class="invalid-tooltip">
                             Please provide name.
                         </div>
@@ -144,7 +97,7 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label class="form-control-label" for="coverImage">Profile Image</label>
-                        <input type="file" name="images" accept="image/*" id="coverImage" class="form-control">
+                        <input type="file" name="images" accept="image/*" id="coverImage" class="form-control" value="<%= student?.imageUrl %>">
                         <div class="invalid-tooltip">
                             Please provide valid user image.
                         </div>
@@ -155,7 +108,7 @@
             <div class="row mt-3">
                 <div class="form-group">
                     <label class="form-control-label" for="input-first-name">About User *</label>
-                    <textarea class="form-control" rows="5" id="review" name="review" placeholder="About user here..." required></textarea>
+                    <textarea class="form-control" rows="5" name="review" value="<%= student.review %>" placeholder="About user here..."  required></textarea>
                     <div class="invalid-tooltip">
                         Please provide about.
                     </div>
