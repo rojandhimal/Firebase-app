@@ -1,0 +1,130 @@
+<div class="header bg-primary pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-white d-inline-block mb-0">Dashboard</h6>
+        </div>
+      </div>
+      <!-- Card stats -->
+      <div class="row">
+        <div class="col-xl-3 col-md-6">
+          <div class="card card-stats">
+            <!-- Card body -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">
+                    Total Students
+                  </h5>
+                  <span class="h2 font-weight-bold mb-0"
+                    ><%- totalRestaurant %></span
+                  >
+                </div>
+                <div class="col-auto">
+                  <div
+                    class="
+                      icon icon-shape
+                      bg-gradient-red
+                      text-white
+                      rounded-circle
+                      shadow
+                    "
+                  >
+                  <i class="fas fa-utensils"></i>
+                    <!-- <i class="ni ni-active-40"></i>
+                    <i class="fa fa-cutlery" aria-hidden="true"></i> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card card-stats">
+            <!-- Card body -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">
+                    Total Students
+                  </h5>
+                  <span class="h2 font-weight-bold mb-0"><%= totalBooking %></span>
+                </div>
+                <div class="col-auto">
+                  <div
+                    class="
+                      icon icon-shape
+                      bg-gradient-orange
+                      text-white
+                      rounded-circle
+                      shadow
+                    "
+                  >
+                    <i class="ni ni-chart-pie-35"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card card-stats">
+            <!-- Card body -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">
+                    Active Students
+                  </h5>
+                  <span class="h2 font-weight-bold mb-0"><%= activeBooking %></span>
+                </div>
+                <div class="col-auto">
+                  <div
+                    class="
+                      icon icon-shape
+                      bg-gradient-green
+                      text-white
+                      rounded-circle
+                      shadow
+                    "
+                  >
+                    <i class="ni ni-money-coins"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <div class="card card-stats">
+            <!-- Card body -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">
+                    Cancelled Students
+                  </h5>
+                  <span class="h2 font-weight-bold mb-0"><%= cancelBooking %></span>
+                </div>
+                <div class="col-auto">
+                  <div
+                    class="
+                      icon icon-shape
+                      bg-gradient-info
+                      text-white
+                      rounded-circle
+                      shadow
+                    "
+                  >
+                  <i class="fas fa-sort-amount-down"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

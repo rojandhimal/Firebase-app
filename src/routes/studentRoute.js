@@ -2,6 +2,8 @@ let studentController = require('../controllers/studentController');
 var multer = require("multer");
 const { uploadMiddleware } = require('../utils/uploader');
 const path = require("path");
+const express = require("express");
+const router = express.Router();
 
 const upload = multer({
     storage: multer.memoryStorage(),
@@ -14,26 +16,25 @@ const upload = multer({
     }
   });
 
-module.exports = (app) => {
-    app.route('/students')
-        .get(studentController.getAllStudents)
-    app.route('/addstudent')
-        .get(studentController.addStudentForm)
-        .post(upload.single("images"), uploadMiddleware,studentController.saveStudent)
-    app.route("/student/:id")
-      .get(studentController.getStudentDetails)
-      .delete(studentController.deleteStudentDetails)
+router.route('/students')
+    .get(studentController.getAllStudents)
+router.route('/addstudent')
+    .get(studentController.addStudentForm)
+    .post(upload.single("images"), uploadMiddleware,studentController.saveStudent)
+router.route("/student/:id")
+  .get(studentController.getStudentDetails)
+  .delete(studentController.deleteStudentDetails)
 
-    app.route("/student/delete/:id")
-      .get(studentController.deleteStudentDetails)
+router.route("/student/delete/:id")
+  .get(studentController.deleteStudentDetails)
 
-    app.route("/student/edit/:id")
-      .get(studentController.editStudentDetails)
-      .post(studentController.editStudentDetails)
+router.route("/student/edit/:id")
+  .get(studentController.editStudentDetails)
+  .post(studentController.editStudentDetails)
 
-      
-    // app.route('/student/add')
-        // .get(studentController.addStudentForm)
-        // .post(upload.single("images"), uploadMiddleware,studentController.saveStudent)
-        
-}
+  
+// router.route('/student/add')
+    // .get(studentController.addStudentForm)
+    // .post(upload.single("images"), uploadMiddleware,studentController.saveStudent)
+    
+module.exports = router;
