@@ -1,34 +1,39 @@
-<div class="mt-5">
-    <h2>Students list</h2>
-</div>
-<hr>
+<div class="container">
+  
+  <div class="mt-5" style="display: flex; justify-content: space-between;">
+      <h2>Students list</h2>
+      <a  class="btn btn-dark" href="/students/add">Add new student</a>
+  </div>
+  <hr>
+  
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Profile</th>
+          <th scope="col">First Name</th> 
+          <th scope="col">Last Name</th>
+          <th scope="col">course</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% students?.forEach((student,index) => { %>
+              <tr>
+                  <th scope="row"><%= index + 1  %></th>
+                  <td><img src="<%= student?.imageUrl %>" alt="image" class="img-thumbnail" style="height: 100px; width: 140px; border: 1px solid black;" ></td>
+                  <td><%= student?.firstname %></td>
+                  <td><%= student?.lastname %></td>
+                  <td><%= student?.course %></td>
+                  <td>
+                      <button class="btn btn-dark" ><a href="/students/<%= student?.id %>">View</a></button>
+                      <button class="btn btn-dark" > <a href="/students/edit/<%= student?.id %>">Edit</a></button>
+                      <button class="btn btn-dark" > <a href="/students/delete/<%= student?.id %>">Delete</a></button> 
+                  </td>
+                </tr>
+              <% }) %>
+        
+      </tbody>
+    </table>
 
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Profile</th>
-        <th scope="col">First Name</th> 
-        <th scope="col">Last Name</th>
-        <th scope="col">course</th>
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-        <% students?.forEach((student,index) => { %>
-            <tr>
-                <th scope="row"><%= index + 1  %></th>
-                <td><img src="<%= student?.imageUrl %>" alt="image" class="img-thumbnail" style="height: 100px; width: 140px; border: 1px solid black;" ></td>
-                <td><%= student?.firstname %></td>
-                <td><%= student?.lastname %></td>
-                <td><%= student?.course %></td>
-                <td>
-                    <button class="btn btn-dark" ><a href="/student/<%= student?.id %>">View</a></button>
-                    <button class="btn btn-dark" > <a href="/student/edit/<%= student?.id %>">Edit</a></button>
-                    <button class="btn btn-dark" > <a href="/student/delete/<%= student?.id %>">Delete</a></button> 
-                </td>
-              </tr>
-            <% }) %>
-      
-    </tbody>
-  </table>
+</div>

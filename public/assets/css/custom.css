@@ -1,0 +1,27 @@
+div.searchReview {
+    display: flex;
+}
+button.clearQueryBtn {
+    display: none;
+    margin-left: 15px;
+    border: none;
+}
+.childItemsUl{
+    margin-left: 20px !important;
+}
+.childMenuItem {
+    margin-right: 30px;
+    background-color: #dee5eb6d;
+    border-radius: 0.375rem;
+}
+.childMenuItem:hover {
+    background-color: #77818bd4;
+}
+.invalid-tooltip {
+    position: relative;
+    background: none;
+    color: red;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 300;
+}
